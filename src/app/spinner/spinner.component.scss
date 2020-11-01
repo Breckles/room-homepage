@@ -1,0 +1,23 @@
+#spinnerWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+ul#spinnerItems {
+  display: flex;
+  width: 100%;
+
+  list-style-type: none;
+
+  li.spinnerItem {
+    width: 100%;
+    flex: 1;
+
+    div.imageContainer {
+      img {
+        width: 100vw;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div id="spinnerWrapper">
+  <ul id='spinnerItems'>
+    <li *ngFor='let item of items'
+        class="spinnerItem">
+      <div class="imageContainer">
+        <img srcset="{{item.mobileImagePath}} 375w,
+                     {{item.desktopImagePath}} 840w"
+             sizes="(max-width: 740px) 375px,
+                            840px"
+             alt="{{item.imageAltText}}">
+      </div>
+      <div class="infoContainer">
+        <h2>{{item.titleText}}</h2>
+        <p>{{item.articleText}}</p>
+      </div>
+      <div class="shopNow">
+        <h3>Shop Now</h3>
+        <a href="#">
+          <img src="../../assets/images/icon-arrow.svg"
+               alt="A black arrow pointing right">
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
