@@ -1,22 +1,99 @@
+@use '../theme';
+
 #spinnerWrapper {
-  width: 100%;
+  // width: 100%;
   height: 100%;
 }
 
 ul#spinnerItems {
+  position: relative;
   display: flex;
-  width: 100%;
+  overflow-x: hidden;
+  // width: 100%;
 
   list-style-type: none;
 
   li.spinnerItem {
-    width: 100%;
-    flex: 1;
+    // width: 100%;
 
-    div.imageContainer {
+    section.imageContainer {
+      position: relative;
+
       img {
+        display: block;
         width: 100vw;
         object-fit: cover;
+      }
+
+      div.spinnerControls {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        width: 11rem;
+        height: 5.5rem;
+
+        background-color: theme.$text_secondary;
+
+        button {
+          flex: 1;
+          margin: 2rem;
+
+          cursor: pointer;
+          border: none;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: transparent;
+        }
+
+        button.leftButton {
+          background-image: url('../../assets/images/icon-angle-left.svg');
+        }
+
+        button.rightButton {
+          background-image: url('../../assets/images/icon-angle-right.svg');
+        }
+      }
+    }
+
+    section.infoContainer {
+      padding: 7rem 3.5rem;
+
+      article {
+        margin-bottom: 5rem;
+
+        h2 {
+          padding-bottom: 2rem;
+
+          letter-spacing: -1px;
+          font-weight: 600;
+          font-size: 2.8rem;
+        }
+
+        p {
+          // color: theme.$dark-gray;
+          color: theme.$dark-gray;
+          letter-spacing: -0.5px;
+          line-height: 1.6;
+          font-weight: 500;
+          font-size: 1.2rem;
+        }
+      }
+
+      div.shopNow {
+        display: flex;
+        align-items: center;
+
+        h3 {
+          letter-spacing: 1rem;
+          font-weight: 500;
+          font-size: 1.2rem;
+        }
+
+        a {
+          margin-left: 4rem;
+        }
+
       }
     }
   }

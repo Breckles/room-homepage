@@ -1,25 +1,34 @@
 <div id="spinnerWrapper">
   <ul id='spinnerItems'>
-    <li *ngFor='let item of items'
+    <li *ngFor='let item of items; index as i;'
         class="spinnerItem">
-      <div class="imageContainer">
+      <section class="imageContainer">
         <img srcset="{{item.mobileImagePath}} 375w,
                      {{item.desktopImagePath}} 840w"
              sizes="(max-width: 740px) 375px,
                             840px"
              alt="{{item.imageAltText}}">
-      </div>
-      <div class="infoContainer">
-        <h2>{{item.titleText}}</h2>
-        <p>{{item.articleText}}</p>
-      </div>
-      <div class="shopNow">
-        <h3>Shop Now</h3>
-        <a href="#">
-          <img src="../../assets/images/icon-arrow.svg"
-               alt="A black arrow pointing right">
-        </a>
-      </div>
+        <div class="spinnerControls">
+          <button class="leftButton"
+                  (click)="spinLeft()"></button>
+          <button class="rightButton"
+                  (click)='spinRight()'></button>
+        </div>
+      </section>
+      <section class="infoContainer">
+        <article>
+          <h2>{{item.titleText}}</h2>
+          <p>{{item.articleText}}</p>
+        </article>
+        <div class="shopNow">
+          <h3>SHOP NOW</h3>
+          <a href="#">
+            <img src="../../assets/images/icon-arrow.svg"
+                 alt="A black arrow pointing right">
+          </a>
+        </div>
+      </section>
     </li>
   </ul>
+
 </div>

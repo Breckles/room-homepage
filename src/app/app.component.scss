@@ -1,3 +1,15 @@
+app-header {
+  position: relative;
+  display: block;
+  z-index: 5;
+}
+
+app-spinner {
+  position: relative;
+  width: 100vw;
+  z-index: 1;
+}
+
 ///////////////////////////////////////////////////////////////////////////
 .attribution {
   font-size: 11px;
@@ -6,8 +18,4 @@
 
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
-
-app-spinner {
-  width: 100vw;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 import { SpinnerItem } from './spinner-item.model';
 
@@ -7,7 +7,7 @@ import { SpinnerItem } from './spinner-item.model';
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.scss'],
 })
-export class SpinnerComponent implements OnInit {
+export class SpinnerComponent implements OnInit, AfterViewInit {
   public items = [
     new SpinnerItem(
       '../../assets/images/desktop-image-hero-1.jpg',
@@ -32,7 +32,42 @@ export class SpinnerComponent implements OnInit {
     ),
   ];
 
+  private maxIndex = this.items.length - 1;
+  private currentIndex = 0;
+
+  private spinnerItemsEl: HTMLUListElement;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  ngAfterViewInit() {
+    this.spinnerItemsEl = document.querySelector(
+      '#spinnerItems'
+    ) as HTMLUListElement;
+  }
+
+  private scrollOptions: ScrollIntoViewOptions = {
+    behavior: 'smooth',
+    block: 'end',
+    inline: 'nearest',
+  };
+
+  public spinLeft() {
+    if (this.currentIndex > 0) {
+      this.currentIndex -= 1;
+      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(
+        this.scrollOptions
+      );
+    }
+    console.log(this.spinnerItemsEl.children[this.currentIndex]);
+  }
+  public spinRight() {
+    if (this.currentIndex < this.maxIndex) {
+      this.currentIndex += 1;
+      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(
+        this.scrollOptions
+      );
+    }
+  }
 }
