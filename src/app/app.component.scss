@@ -1,3 +1,5 @@
+@use './theme';
+
 app-header {
   position: relative;
   display: block;
@@ -6,12 +8,37 @@ app-header {
 
 app-spinner {
   position: relative;
+  display: block;
   width: 100vw;
   z-index: 1;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+article {
+  padding: 6rem 2rem 6rem 3rem;
+
+  h4 {
+    margin-bottom: 1.5rem;
+
+    letter-spacing: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  p {
+    line-height: 1.7;
+    color: theme.$dark-gray;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
 ///////////////////////////////////////////////////////////////////////////
 .attribution {
+  padding-top: 1rem;
   font-size: 11px;
   text-align: center;
 }
