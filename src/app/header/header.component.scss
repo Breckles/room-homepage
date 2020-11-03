@@ -8,8 +8,6 @@ header#headerWrapper {
   align-items: center;
   width: 100%;
   height: var(--header-height);
-
-  // background-color: black;
 }
 
 button#menuToggle {
@@ -51,25 +49,34 @@ header#headerWrapper.menuOpen {
 
   nav#menu {
     position: absolute;
+    left: 0;
+    top: 0;
     z-index: 1;
-    display: flex;
+    display: block;
     width: 100%;
-    height: var(--header-height);
+    height: 100vh;
 
-    background-color: theme.$bg_primary;
+    background-color: rgba(theme.$very-dark-grey, 0.5);
+
 
     ul {
+      position: absolute;
+      left: 0;
+      top: 0;
       display: flex;
       align-items: center;
-      justify-content: right;
-      gap: 3rem;
+      justify-content: flex-end;
+      // gap: 3rem;
       width: 100%;
+      height: var(--header-height);
       padding: 2.5rem;
 
       list-style-type: none;
+      background-color: theme.$bg_primary;
 
       li {
         margin-top: 0.5rem;
+        margin-left: 3rem;
 
         font-size: 1.2rem;
         font-weight: 700;
