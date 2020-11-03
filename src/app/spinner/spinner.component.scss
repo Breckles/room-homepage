@@ -80,20 +80,20 @@ ul#spinnerItems {
         }
       }
 
-      div.shopNow {
+      a.shopNow {
         display: flex;
         align-items: center;
 
+        color: theme.$text_secondary;
+        text-decoration: none;
+
         h3 {
+          margin-right: 4rem;
+
           letter-spacing: 1rem;
           font-weight: 500;
           font-size: 1.2rem;
         }
-
-        a {
-          margin-left: 4rem;
-        }
-
       }
     }
   }
@@ -125,6 +125,15 @@ ul#spinnerItems {
           transform: translateX(100%);
           width: 16rem;
           height: 8rem;
+
+          button {
+            margin: 0;
+            padding: 2rem;
+          }
+
+          button:hover {
+            background-color: theme.$very-dark-grey;
+          }
         }
       }
 
@@ -146,6 +155,14 @@ ul#spinnerItems {
 
           p {
             line-height: 1.7;
+          }
+        }
+
+        a.shopNow:hover {
+          color: theme.$dark-gray;
+
+          path {
+            fill: theme.$dark-gray;
           }
         }
       }

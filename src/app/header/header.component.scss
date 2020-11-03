@@ -127,6 +127,22 @@ header#headerWrapper.menuOpen {
           font-weight: 600;
         }
       }
+
+      li:hover {
+        position: relative;
+        cursor: pointer;
+
+        a::after {
+          content: '';
+          position: absolute;
+          display: block;
+          margin-top: 0.7rem;
+          width: 50%;
+
+          transform: translateX(50%);
+          border-bottom: 2px solid theme.$bg_primary;
+        }
+      }
     }
   }
 }
