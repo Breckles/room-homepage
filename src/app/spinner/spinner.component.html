@@ -3,11 +3,22 @@
     <li *ngFor='let item of items; index as i;'
         class="spinnerItem">
       <section class="imageContainer">
-        <img srcset="{{item.mobileImagePath}} 375w,
+
+        <!-- <img src="{{item.desktopImagePath}}"
+             srcset="{{item.mobileImagePath}} 375w,
                      {{item.desktopImagePath}} 840w"
              sizes="(max-width: 740px) 375px,
                             840px"
-             alt="{{item.imageAltText}}">
+             alt="{{item.imageAltText}}"> -->
+
+        <picture>
+          <source media="(max-width: 740px)"
+                  srcset="{{item.mobileImagePath}}">
+          <source media="(min-width: 741px)"
+                  srcset="{{item.desktopImagePath}}">
+          <img src="{{item.desktopImagePath}}"
+               alt="item.imageAltText">
+        </picture>
         <div class="spinnerControls">
           <button class="leftButton"
                   (click)="spinLeft()"></button>

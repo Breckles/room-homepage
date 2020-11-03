@@ -56,18 +56,14 @@ export class SpinnerComponent implements OnInit, AfterViewInit {
   public spinLeft() {
     if (this.currentIndex > 0) {
       this.currentIndex -= 1;
-      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(
-        this.scrollOptions
-      );
+      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(false);
     }
     console.log(this.spinnerItemsEl.children[this.currentIndex]);
   }
   public spinRight() {
     if (this.currentIndex < this.maxIndex) {
       this.currentIndex += 1;
-      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(
-        this.scrollOptions
-      );
+      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(false);
     }
   }
 }
