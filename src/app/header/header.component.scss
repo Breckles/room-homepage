@@ -58,7 +58,6 @@ header#headerWrapper.menuOpen {
 
     background-color: rgba(theme.$very-dark-grey, 0.5);
 
-
     ul {
       position: absolute;
       left: 0;
@@ -66,7 +65,6 @@ header#headerWrapper.menuOpen {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      // gap: 3rem;
       width: 100%;
       height: var(--header-height);
       padding: 2.5rem;
@@ -91,5 +89,44 @@ header#headerWrapper.menuOpen {
 
   img#logo {
     display: none;
+  }
+}
+
+//// screen size >= 740 ///////////////////////////////////////////
+
+@media screen and (min-width: 740px) {
+  header#headerWrapper {
+    padding: 7rem;
+  }
+
+  button#menuToggle {
+    display: none;
+  }
+
+  img#logo {
+    position: static;
+    margin-right: 6rem;
+    transform: none;
+  }
+
+  nav#menu {
+    display: block;
+
+    ul {
+      display: flex;
+
+      list-style-type: none;
+
+      li {
+        margin-right: 3rem;
+
+        a {
+          color: theme.$bg_primary;
+          text-decoration: none;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+      }
+    }
   }
 }

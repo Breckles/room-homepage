@@ -51,6 +51,14 @@ export class SpinnerComponent implements OnInit, AfterViewInit {
         this.scrollOptions
       );
     });
+
+    document.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        this.spinLeft();
+      } else if (event.key === 'ArrowRight') {
+        this.spinRight();
+      }
+    });
   }
 
   private scrollOptions: ScrollIntoViewOptions = {
@@ -66,7 +74,6 @@ export class SpinnerComponent implements OnInit, AfterViewInit {
         this.scrollOptions
       );
     }
-    console.log(this.spinnerItemsEl.children[this.currentIndex]);
   }
   public spinRight() {
     if (this.currentIndex < this.maxIndex) {
