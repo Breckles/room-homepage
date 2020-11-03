@@ -15,5 +15,20 @@ html {
 }
 
 body {
+  height: 100%;
   font-size: 1.6rem;
+}
+
+app-root {
+  // display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+@media screen and (min-width: 740px) {
+  html {
+    height: 100vh;
+  }
 }

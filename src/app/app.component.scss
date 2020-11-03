@@ -36,15 +36,55 @@ article {
   }
 }
 
-///////////////////////////////////////////////////////////////////////////
-.attribution {
+section#attribution {
   padding-top: 1rem;
 
   background-color: theme.$dark-gray;
   font-size: 11px;
   text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+
 }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+//// screen width >= 740px //////////////////////////////////////////
+
+@media screen and (min-width: 740px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 98%;
+
+    app-spinner {
+      flex: 65;
+      max-height: 68%;
+    }
+
+    section#info {
+      flex: 30;
+      display: flex;
+      // overflow-y: hidden;
+      max-height: 32%;
+
+      img {
+        flex: 20;
+        max-height: 100%;
+        object-fit: cover;
+      }
+
+      article {
+        flex: 25;
+        padding: 5% 3%;
+      }
+    }
+
+  }
+
+  section#attribution {
+    flex: 10;
+    padding: 0;
+    height: 2%;
+  }
 }

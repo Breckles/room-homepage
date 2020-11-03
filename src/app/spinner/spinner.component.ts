@@ -14,7 +14,7 @@ export class SpinnerComponent implements OnInit, AfterViewInit {
       '../../assets/images/mobile-image-hero-1.jpg',
       'Stylish white chairs around a table with a Banzai tree in its center',
       'Discover innovative ways to decorate',
-      'We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form andnfunction in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.'
+      'We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.'
     ),
     new SpinnerItem(
       '../../assets/images/desktop-image-hero-2.jpg',
@@ -45,6 +45,12 @@ export class SpinnerComponent implements OnInit, AfterViewInit {
     this.spinnerItemsEl = document.querySelector(
       '#spinnerItems'
     ) as HTMLUListElement;
+
+    window.addEventListener('resize', () => {
+      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(
+        this.scrollOptions
+      );
+    });
   }
 
   private scrollOptions: ScrollIntoViewOptions = {
@@ -56,14 +62,18 @@ export class SpinnerComponent implements OnInit, AfterViewInit {
   public spinLeft() {
     if (this.currentIndex > 0) {
       this.currentIndex -= 1;
-      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(false);
+      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(
+        this.scrollOptions
+      );
     }
     console.log(this.spinnerItemsEl.children[this.currentIndex]);
   }
   public spinRight() {
     if (this.currentIndex < this.maxIndex) {
       this.currentIndex += 1;
-      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(false);
+      this.spinnerItemsEl.children[this.currentIndex].scrollIntoView(
+        this.scrollOptions
+      );
     }
   }
 }
