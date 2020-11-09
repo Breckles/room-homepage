@@ -92,9 +92,10 @@ header#headerWrapper.menuOpen {
   }
 }
 
-//// screen size >= 740 ///////////////////////////////////////////
 
-@media screen and (min-width: 740px) {
+//// screen size >= 1440 ///////////////////////////////////////////
+
+@media screen and (min-width: 1440px) {
   header#headerWrapper {
     padding: 7rem;
   }

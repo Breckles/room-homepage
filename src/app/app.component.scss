@@ -54,19 +54,10 @@ section#attribution {
 
 }
 
-//// screen width >= 740px //////////////////////////////////////////
+//// screen size >= 800px /////////////////////////////////////////
 
-@media screen and (min-width: 740px) {
+@media screen and (min-width: 800px) {
   main {
-    display: flex;
-    flex-direction: column;
-    height: 98%;
-
-    app-spinner {
-      flex: 65;
-      max-height: 68%;
-    }
-
     section#info {
       flex: 30;
       display: flex;
@@ -84,12 +75,26 @@ section#attribution {
         padding: 5% 3%;
       }
     }
-
   }
 
   section#attribution {
     flex: 10;
     padding: 0;
     height: 2%;
+  }
+}
+
+//// screen width >= 1440px //////////////////////////////////////////
+
+@media screen and (min-width: 1440px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 98%;
+
+    app-spinner {
+      flex: 65;
+      max-height: 68%;
+    }
   }
 }
